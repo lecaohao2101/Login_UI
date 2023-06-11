@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:login_ui/utils/global.colors.dart';
+import 'package:login_ui/view/widgets/button.global.dart';
+import 'package:login_ui/view/widgets/social.login.dart';
 import 'package:login_ui/view/widgets/text.form.global.dart';
 
 
@@ -20,10 +22,11 @@ class LoginView extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                const SizedBox(height: 20,),
                 Container(
                   alignment: Alignment.center,
                   child: Text(
-                    'Logo',
+                    'Question - Answer',
                     style: TextStyle(
                       color: GlobalColors.mainColor,
                       fontSize: 35,
@@ -56,9 +59,34 @@ class LoginView extends StatelessWidget {
                   obscure: true,
                   textInputType: TextInputType.text,
                 ),
+                const SizedBox(height: 15),
+                const ButtonGlobal(),
+                const SizedBox(height: 30,),
+                SocialLogin(),
               ],
             ),
           ),
+        ),
+      ),
+      bottomNavigationBar: Container(
+        height: 50,
+        color: Colors.white,
+        alignment: Alignment.center,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              'Don\'t have an account? ',
+            ),
+            InkWell(
+              child: Text(
+                'Sign up',
+                style: TextStyle(
+                  color: GlobalColors.mainColor
+                ),
+              ),
+            )
+          ],
         ),
       ),
     );
