@@ -4,7 +4,9 @@ import 'package:login_ui/view/widgets/text.form.global.dart';
 
 
 class LoginView extends StatelessWidget {
-  const LoginView({Key? key}) : super(key: key);
+  LoginView({Key? key}) : super(key: key);
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +41,21 @@ class LoginView extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 15),
-                TextFormGlobal(),
+                // Email Input
+                TextFormGlobal(
+                  controller: emailController,
+                  text: 'Email',
+                  obscure: false,
+                  textInputType: TextInputType.emailAddress,
+                ),
+                const SizedBox(height: 15),
+                // Password Input
+                TextFormGlobal(
+                  controller: passwordController,
+                  text: 'Password',
+                  obscure: true,
+                  textInputType: TextInputType.text,
+                ),
               ],
             ),
           ),
